@@ -1,3 +1,9 @@
 h1 一覧
 
 = link_to "投稿", new_picture_path
+
+tbody
+  - @pictures.each do |picture|
+    tr
+      td = picture.image.url
+      td = picture.created_at
