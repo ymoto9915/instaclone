@@ -1,2 +1,12 @@
-h1 Pictures#new
-p Find me in app/views/pictures/new.html.slim
+h1 写真投稿
+
+= link_to "写真一覧", pictures_path
+
+= form_with model: @pictures, local: true do |f|
+  .form-group
+    = f.label :picture
+    = f.text_field :picture
+  .form-group
+    = f.label :description
+    = f.text_area :description, rows: 3
+  = f.submit nil
