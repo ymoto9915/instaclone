@@ -2,8 +2,10 @@ h1 一覧
 
 = link_to "投稿", new_picture_path
 
-tbody
-  - @pictures.each do |picture|
-    tr
-      td = image_tag picture.image.url
-      td = picture.created_at
+.row.justify-content-between.flex-wrap.align-content-around
+  tbody
+    - @pictures.each do |picture|
+      .row.flex-column.justify-content-center
+        tr
+          td= link_to image_tag(picture.image_url, size: '300x300'), picture_path(pictureｓ)
+          td= picture.created_at
