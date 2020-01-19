@@ -9,6 +9,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     .app-title.navbar.navbar-expand-md.navbar-light.bg-light
-      .navbar-brand Instaclone
+      .navbar-brand
+        =link_to 'Instaclone', pictures_path
     .container
     = yield
