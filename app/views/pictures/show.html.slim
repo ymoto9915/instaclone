@@ -16,4 +16,4 @@ table.table.table-hover
       td= @picture.description
     tr
       th= Picture.human_attribute_name(:created_at)
-      td= @picture.created_at
+      td= @picture.created_at.strftime("%Y-%m-%d %H:%M")
