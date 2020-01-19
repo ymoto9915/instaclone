@@ -7,5 +7,5 @@ h1 一覧
     - @pictures.each do |picture|
       .row.flex-column.justify-content-center
         tr
-          td= link_to image_tag(picture.image_url, size: '300x300'), picture_path(pictureｓ)
+          td= link_to image_tag(picture.image_url, size: '300x300'), picture_path(picture)
           td= picture.created_at
