@@ -22,9 +22,12 @@ class PicturesController < ApplicationController
   end
 
   def create
-    picture = Picture.new(picture_params)
-    picture.save!
-    redirect_to pictures_url, notice: "投稿完了"
+    @picture = Picture.new(picture_params)
+    if @picture.save
+      redirect_to @picture, notice: "「投稿しました」"
+    else
+      render :new
+    end
   end
 
   def destroy

@@ -2,6 +2,10 @@ h2 写真を投稿します
 
 = link_to "写真一覧", pictures_path
 
+- if @picture.errors.present?
+  ul#error_explanation
+    - @picture.errors.full_messages.each do |message|
+      li = message
 = form_with model: @picture, local: true do |f|
   .form-group
     = f.label :image
