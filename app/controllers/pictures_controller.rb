@@ -27,6 +27,12 @@ class PicturesController < ApplicationController
     redirect_to pictures_url, notice: "投稿完了"
   end
 
+  def destroy
+    picture = Picture.find(params[:id])
+    picture.destroy
+    redirect_to pictures_url, notice: "写真を削除しました"
+  end
+
   private
 
   def picture_params

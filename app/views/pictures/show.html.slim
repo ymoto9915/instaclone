@@ -1,7 +1,6 @@
 h1 写真詳細
 
-.nav.justify-content-center
-  = link_to '編集する', edit_picture_path
+
 
 table.table.table-hover
   tbody
@@ -17,3 +16,7 @@ table.table.table-hover
     tr
       th= Picture.human_attribute_name(:created_at)
       td= @picture.created_at.strftime("%Y-%m-%d %H:%M")
+
+.nav.justify-content-center
+  = link_to '編集', edit_picture_path, class: 'btn btn-primary'
+  = link_to '削除', @picture, method: :delete, data: { confirm: "写真を削除しますか？" }, class: 'btn btn-danger'
