@@ -1,2 +1,12 @@
-h1 Pictures#edit
-p Find me in app/views/pictures/edit.html.slim
+h1 編集
+
+
+= form_with model: @picture, local:true do |f|
+  .form-group
+    = image_tag @picture.image_url, size: "300x300"
+  .form-group
+    = f.label :description
+    = f.text_area :description, rows: 3, class: 'form-control', id: 'picture_description'
+  = f.submit nil, class: 'btn btn-primary'
+
+
