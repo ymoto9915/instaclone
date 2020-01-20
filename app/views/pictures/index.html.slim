@@ -1,11 +1,13 @@
 h1 一覧
 
-= link_to "投稿", new_picture_path
-
 .row.justify-content-around.flex-wrap.align-content-around
   tbody
     - @pictures.each do |picture|
       .row.flex-column
         tr
           td= link_to image_tag(picture.image_url, size: '300x300'), picture_path(picture)
-          td= picture.created_at.strftime("%Y-%m-%d %H:%M")
+          .row.justify-content-center
+            td= picture.created_at.strftime("%Y-%m-%d %H:%M")
+
+.nav.justify-content-center
+  = link_to "投稿", new_picture_path, class: 'btn btn-primary'
