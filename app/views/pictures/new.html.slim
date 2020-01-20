@@ -1,15 +1,14 @@
-.row.hidden-xs.col-sm-12
-  .center-block
-    .page-header
-      h2 写真を投稿します
+h2 写真を投稿します
 
 = link_to "写真一覧", pictures_path
 
 = form_with model: @picture, local: true do |f|
   .form-group
     = f.label :image
-    = f.file_field :image
+    = f.file_field :image, class: 'form-control'
   .form-group
     = f.label :description
-    = f.text_area :description, rows: 3
-  = f.submit nil
+    = f.text_area :description, rows: 3, class: 'form-control'
+  .nav
+    = f.submit nil, class: 'btn btn-primary'
+
