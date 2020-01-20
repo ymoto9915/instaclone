@@ -24,7 +24,7 @@ class PicturesController < ApplicationController
   def create
     @picture = Picture.new(picture_params)
     if @picture.save
-      redirect_to @picture, notice: "「投稿しました」"
+      redirect_to pictures_path, notice: "「投稿しました」"
     else
       render :new
     end
